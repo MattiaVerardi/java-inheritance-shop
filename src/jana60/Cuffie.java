@@ -4,13 +4,13 @@ public class Cuffie extends Prodotto {
 
 	// attributi
 	private String colore;
-	private boolean wireless;
+	private boolean eWireless;
 
 	// costruttori
 	public Cuffie(int codice, String nome, String marca, double prezzo, double iva, String colore, boolean wireless) {
 		super(codice, nome, marca, prezzo, iva);
 		this.colore = colore;
-		this.wireless = wireless;
+		this.eWireless = wireless;
 	}
 
 	// metodi getter e setter
@@ -23,11 +23,23 @@ public class Cuffie extends Prodotto {
 	}
 
 	public boolean isWireless() {
-		return wireless;
+		return eWireless;
 	}
 
 	public void setWireless(boolean wireless) {
-		this.wireless = wireless;
+		this.eWireless = wireless;
 	}
 
+	// metodi
+	public String stampaWireless() {
+		if (eWireless) {
+			return " e sono abilitate al wireless";
+		} else {
+			return " e non sono abilitate al wireless";
+		}
+	}
+
+	public String toString() {
+		return super.toString() + "Presenta un colore " + colore + stampaWireless();
+	}
 }

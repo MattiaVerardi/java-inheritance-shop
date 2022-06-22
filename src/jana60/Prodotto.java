@@ -82,11 +82,16 @@ public class Prodotto {
 
 	// metodi
 	public double prezzoIvato() {
-		return prezzo * (1 + iva);
+		return prezzo + prezzo * (iva / 100);
 	}
 
 	public String prezzoDF() {
 		return df.format(prezzoIvato());
+	}
+
+	public String toString() {
+		return "Il prodotto " + nome + " di marca " + marca + " e di codice " + codice + " viene venduto al prezzo di "
+				+ prezzoDF() + ". ";
 	}
 
 }

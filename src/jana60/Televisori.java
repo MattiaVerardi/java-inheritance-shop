@@ -38,4 +38,16 @@ public class Televisori extends Prodotto {
 	public String dimensioniDF() {
 		return df.format(dimensioni);
 	}
+
+	public String stampaSmart() {
+		if (eSmart) {
+			return " e presenta funzionalità smart";
+		} else {
+			return " e non presenta funzionalità smart";
+		}
+	}
+
+	public String toString() {
+		return super.toString() + "Presenta delle dimensioni di " + dimensioniDF() + stampaSmart();
+	}
 }

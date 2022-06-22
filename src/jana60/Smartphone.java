@@ -38,4 +38,9 @@ public class Smartphone extends Prodotto {
 	public String memoriaDF() {
 		return df.format(quantitaMemoria);
 	}
+
+	public String toString() {
+		return super.toString() + "Presenta una quantità di memoria di " + memoriaDF() + " e il suo codice IMEI è "
+				+ imei;
+	}
 }
