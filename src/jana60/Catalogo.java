@@ -26,73 +26,56 @@ public class Catalogo {
 					.println("Digita 1 per inserire uno Smartphone, 2 per un Televisore, 3 per Cuffie e 4 per uscire");
 			String scelta = scan.nextLine();
 			String risposta;
+
+			System.out.println("Inserisci il codice: ");
+			int inputCodice = Integer.parseInt(scan.nextLine());
+			System.out.println("Inserisci il nome: ");
+			String inputNome = scan.nextLine();
+			System.out.println("Inserisci la marca: ");
+			String inputMarca = scan.nextLine();
+			System.out.println("Inserisci il prezzo: ");
+			double inputPrezzo = Double.parseDouble(scan.nextLine());
+			System.out.println("Inserisci l'iva: ");
+			double inputIva = Double.parseDouble(scan.nextLine());
+
 			switch (scelta) {
 			case "1":
-				System.out.println("Inserisci il codice: ");
-				int codiceS = Integer.parseInt(scan.nextLine());
-				System.out.println("Inserisci il nome: ");
-				String nomeS = scan.nextLine();
-				System.out.println("Inserisci la marca: ");
-				String marcaS = scan.nextLine();
-				System.out.println("Inserisci il prezzo: ");
-				double prezzoS = Double.parseDouble(scan.nextLine());
-				System.out.println("Inserisci l'iva: ");
-				double ivaS = Double.parseDouble(scan.nextLine());
 				System.out.println("Inserisci l'IMEI: ");
-				String imeiS = scan.nextLine();
-				System.out.println("Inserisci la quntità di memoria: ");
-				int quantitaMemoriaS = Integer.parseInt(scan.nextLine());
-				Smartphone nuovoSmartphone = new Smartphone(codiceS, nomeS, marcaS, prezzoS, ivaS, imeiS,
-						quantitaMemoriaS);
+				String inputImei = scan.nextLine();
+				System.out.println("Inserisci la quantità di memoria: ");
+				int inputQuantitaMemoria = Integer.parseInt(scan.nextLine());
+				Smartphone nuovoSmartphone = new Smartphone(inputCodice, inputNome, inputMarca, inputPrezzo, inputIva,
+						inputImei, inputQuantitaMemoria);
 				System.out.println(nuovoSmartphone.toString());
 				break;
 			case "2":
-				System.out.println("Inserisci il codice: ");
-				int codiceT = Integer.parseInt(scan.nextLine());
-				System.out.println("Inserisci il nome: ");
-				String nomeT = scan.nextLine();
-				System.out.println("Inserisci la marca: ");
-				String marcaT = scan.nextLine();
-				System.out.println("Inserisci il prezzo: ");
-				double prezzoT = Double.parseDouble(scan.nextLine());
-				System.out.println("Inserisci l'iva: ");
-				double ivaT = Double.parseDouble(scan.nextLine());
 				System.out.println("Inserisci le dimensioni: ");
-				int dimensioniT = Integer.parseInt(scan.nextLine());
+				int inputDimensioni = Integer.parseInt(scan.nextLine());
 				System.out.println("Scegli o meno la funzionalità smart");
 				risposta = scan.nextLine();
-				boolean eSmartT;
+				boolean inputESmart;
 				if (risposta.equalsIgnoreCase("si")) {
-					eSmartT = true;
+					inputESmart = true;
 				} else {
-					eSmartT = false;
+					inputESmart = false;
 				}
-				Televisori nuovoTelevisore = new Televisori(codiceT, nomeT, marcaT, prezzoT, ivaT, dimensioniT,
-						eSmartT);
+				Televisori nuovoTelevisore = new Televisori(inputCodice, inputNome, inputMarca, inputPrezzo, inputIva,
+						inputDimensioni, inputESmart);
 				System.out.println(nuovoTelevisore.toString());
 				break;
 			case "3":
-				System.out.println("Inserisci il codice: ");
-				int codiceC = Integer.parseInt(scan.nextLine());
-				System.out.println("Inserisci il nome: ");
-				String nomeC = scan.nextLine();
-				System.out.println("Inserisci la marca: ");
-				String marcaC = scan.nextLine();
-				System.out.println("Inserisci il prezzo: ");
-				double prezzoC = Double.parseDouble(scan.nextLine());
-				System.out.println("Inserisci l'iva: ");
-				double ivaC = Double.parseDouble(scan.nextLine());
 				System.out.println("Inserisci il colore: ");
-				String coloreC = scan.nextLine();
+				String inputColore = scan.nextLine();
 				System.out.println("Scegli o meno la funzionalità wireless");
 				risposta = scan.nextLine();
-				boolean eWirelessC;
+				boolean inputEWireless;
 				if (risposta.equalsIgnoreCase("si")) {
-					eWirelessC = true;
+					inputEWireless = true;
 				} else {
-					eWirelessC = false;
+					inputEWireless = false;
 				}
-				Cuffie nuoveCuffie = new Cuffie(codiceC, nomeC, marcaC, prezzoC, ivaC, coloreC, eWirelessC);
+				Cuffie nuoveCuffie = new Cuffie(inputCodice, inputNome, inputMarca, inputPrezzo, inputIva, inputColore,
+						inputEWireless);
 				System.out.println(nuoveCuffie.toString());
 				break;
 			case "4":
